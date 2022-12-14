@@ -10,12 +10,21 @@
     <link rel="stylesheet" href="/css/main.css">
 </head>
 
-<body>
+<body onload="init()">
 
     <section class="gallery-section"></section>
 
-    <section class="editor-section"></section>
+    <canvas id="canvas" class="canvas hidden" height="400" width="400" style="border: 1px solid black;"></canvas>
 
+    <section class="editor-section hidden">
+        <input data-trans="text-line" class="text-line" type="text" onkeyup="onKeyUpText()"
+            placeHolder="insert your text here">
+    </section>
+
+    <script src="/js/galleryService.js"></script>
+    <script src="/js/galleryController.js"></script>
+    <script src="/js/memeService.js"></script>
+    <script src="/js/memeController.js"></script>
     <script src="/js/main.js"></script>
 </body>
 
