@@ -13,7 +13,7 @@ function renderMeme() {
     hideGallery()
     showCanvasEditor()
     // gCtx.font = "30px Arial";
-    // gCtx.fillText(getText(), 10, 50);
+    gCtx.fillText(getText(), 10, 50);
 }
 
 function onKeyUpText() {
@@ -29,6 +29,13 @@ function showCanvasEditor() {
     elCanvas.classList.remove('hidden')
     const elEditor = document.querySelector('.editor-section')
     elEditor.classList.remove('hidden')
+}
+
+function hideCanvasEditor() {
+    const elCanvas = document.querySelector('.canvas')
+    elCanvas.classList.add('hidden')
+    const elEditor = document.querySelector('.editor-section')
+    elEditor.classList.add('hidden')
 }
 
 function onDownloadMeme(elLink) {

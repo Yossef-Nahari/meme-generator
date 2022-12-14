@@ -18,9 +18,9 @@
             <div class="logo">meme generator</div>
             <nav class="main-nav center">
                 <ul>
-                    <li class="menu"><a href="#">gallery</a></li>
-                    <li class="menu"><a href="#">my memes</a></li>
-                    <li class="menu"><a href="#">about</a></li>
+                    <li class="menu"><a class="menu-a" onclick="onGallerySelect()">gallery</a></li>
+                    <li class="menu"><a class="menu-a" href="#">my memes</a></li>
+                    <li class="menu"><a class="menu-a" href="#">about</a></li>
                 </ul>
             </nav>
         </header>
@@ -34,7 +34,7 @@
             <section class="editor-section hidden">
                 <h2>meme editor 🤡</h2>
                 <input data-trans="text-line" class="text-line" type="text" onkeyup="onKeyUpText()"
-                    placeHolder="insert your text here">
+                    placeHolder="insert your meme here 🤣">
                 <button class="fa-solid switch"></button>
                 <button class="fa-solid new"></button>
                 <button class="fa-solid delete"></button>
@@ -47,8 +47,8 @@
                 <button class="fa-solid bold"></button>
                 <button class="fa-solid paint"></button>
                 <!-- To-do: add select emojy -->
-                <a href="#" class="btn-download" onclick="ondDownloadMeme(this)" download="my-meme.jpg">download</a>
-                <button class="btn" onclick="onUploadMeme()">upload</button>
+                <a href="#" class="btn btn-download" onclick="ondDownloadMeme(this)" download="my-meme.jpg">download</a>
+                <a class="btn btn-share" onclick="onUploadMeme()">share</a>
             </section>
         </section>
 
