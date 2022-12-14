@@ -7,11 +7,13 @@
     /* --pallete-- */
 
     /* -background color- */
-    --clr1: linear-gradient(to top right, rgb(76, 76, 205), rgb(201, 201, 205));
+    --clr1: linear-gradient(to top right, rgb(43, 43, 219), rgb(201, 201, 205));
     /* -icons hover color- */
     --clr2: rgb(255, 255, 255);
     /* -menu hover color- */
     --clr3: rgba(231, 30, 30, 0.704);
+    /* -gallery section background- */
+    --clr4: rgba(0, 0, 0, 0.301);
 
     /* --bp-- */
     --s: ;
@@ -57,8 +59,14 @@ header {
 
 .gallery-section {
     grid-area: gallery;
-    background-color: rgb(251, 14, 14);
-    padding: 10px 0;
+    display: grid;
+    padding: 10px;
+    margin: auto;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    text-align: center;
+    background-color: var(--clr4);
+    border-radius: 10px;
 }
 
 footer {
@@ -91,8 +99,34 @@ footer {
 small {
     display: block;
     font-size: 0.5em;
+    color: var(--clr2);
     margin: 0.5em 0;
 }
+
+img {
+    cursor: pointer;
+    height: 150px;
+    transition: 1.5s;
+}
+
+
+
+
+img:hover {
+    box-shadow: 0.5em -0 .8em rgb(63, 189, 76), -0.5em 0 .8em rgb(63, 189, 76);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---COMPONENTS--- */
 
@@ -139,6 +173,10 @@ ul {
 
 li {
     padding: 0.5rem;
+}
+
+.icons {
+    padding: 0 8px;
 }
 
 .menu:hover {

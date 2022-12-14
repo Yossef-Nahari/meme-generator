@@ -1,10 +1,15 @@
 'use strict'
 
-const imgs = [
-    "img/1.jpg",
-    "img/2.jpg"
-]
+let gImgs
+
+function createImgs() {
+    const imgs = []
+    for (let i = 0; i < 18; i++) {
+        imgs.push(`img/${i + 1}.jpg`)
+    }
+    gImgs = imgs
+}
 
 function getGallery() {
-    return imgs
+    return gImgs
 }
