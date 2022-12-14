@@ -43,10 +43,15 @@
                 <button class="fa-solid ltr"></button>
                 <button class="fa-solid bars"></button>
                 <button class="fa-solid rtl"></button>
-                <!-- To-do: add select font -->
+                <select class="select-font" onchange="onSetFont()">
+                    <option value="Cambaria">Cambaria</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Times">Times</option>
+                </select>
                 <button class="fa-solid bold"></button>
-                <button class="fa-solid paint"></button>
-                <!-- To-do: add select emojy -->
+                <!-- <button class="fa-solid paint"></button> -->
+                <input id="paint" type="color" class="select-color" onchange="onChangeColor()">
+                <!-- To-do: add select emojy and repair paint icon-->
                 <a href="#" class="btn btn-download" onclick="ondDownloadMeme(this)" download="my-meme.jpg">download</a>
                 <a class="btn btn-share" onclick="onUploadMeme()">share</a>
             </section>

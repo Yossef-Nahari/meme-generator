@@ -204,6 +204,22 @@ small {
     margin: 0.5em 0;
 }
 
+.select-font {
+    margin-top: 18px;
+    height: 40px;
+    width: 100px;
+    font-size: 20px;
+    font-family: Kenia-Regular;
+    text-align: center;
+    background-color: var(--clr9);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.select-font:hover {
+    background-color: var(--clr10);
+}
+
 img {
     cursor: pointer;
     height: 150px;
