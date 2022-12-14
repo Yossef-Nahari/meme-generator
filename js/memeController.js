@@ -10,8 +10,10 @@ function renderMeme() {
     img.src = getMeme()
     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height) //img,x,y,xEnd,yEnd
     // To-do: add a line of text on top
+    hideGallery()
+    showCanvasEditor()
     // gCtx.font = "30px Arial";
-    gCtx.fillText(getText(), 10, 50);
+    // gCtx.fillText(getText(), 10, 50);
 }
 
 function onKeyUpText() {
@@ -20,4 +22,11 @@ function onKeyUpText() {
         setLineText(textStr)
         renderMeme()
     }, 500);
+}
+
+function showCanvasEditor() {
+    const elCanvas = document.querySelector('.canvas')
+    elCanvas.classList.remove('hidden')
+    const elEditor = document.querySelector('.editor-section')
+    elEditor.classList.remove('hidden')
 }

@@ -109,24 +109,9 @@ img {
     transition: 1.5s;
 }
 
-
-
-
 img:hover {
     box-shadow: 0.5em -0 .8em rgb(63, 189, 76), -0.5em 0 .8em rgb(63, 189, 76);
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ---COMPONENTS--- */
 

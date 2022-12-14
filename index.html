@@ -27,6 +27,13 @@
 
         <section class="gallery-section"></section>
 
+        <canvas id="canvas" class="canvas hidden" height="400" width="400" style="border: 1px solid black;"></canvas>
+
+        <section class="editor-section hidden">
+            <input data-trans="text-line" class="text-line" type="text" onkeyup="onKeyUpText()"
+                placeHolder="insert your text here">
+        </section>
+
         <footer>
             <div class="logo-footer">meme generator</div>
             <small>© 2022 yossef nahari - all rights reserved - more apps at
@@ -39,13 +46,6 @@
             </ul>
         </footer>
 
-    </section>
-
-    <canvas id="canvas" class="canvas hidden" height="400" width="400" style="border: 1px solid black;"></canvas>
-
-    <section class="editor-section hidden">
-        <input data-trans="text-line" class="text-line" type="text" onkeyup="onKeyUpText()"
-            placeHolder="insert your text here">
     </section>
 
     <script src="/js/galleryService.js"></script>

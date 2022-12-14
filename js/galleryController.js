@@ -3,7 +3,7 @@
 function renderGallery() {
     const gallery = getGallery()
     var galleryStrHTML = gallery.map(img =>
-        `<img src="${img}" onClick="onImgSelect(this.src)">`
+        `<img src="${img.src}" data-info="${img.info}" title="${img.info}" onClick="onImgSelect(this.src)">`
     )
     document.querySelector('.gallery-section').innerHTML = galleryStrHTML.join('')
 }
@@ -11,4 +11,9 @@ function renderGallery() {
 function onImgSelect(imgSrc) {
     setImg(imgSrc)
     renderMeme()
+}
+
+function hideGallery() {
+    const elGallery = document.querySelector('.gallery-section')
+    elGallery.classList.add('hidden')
 }
