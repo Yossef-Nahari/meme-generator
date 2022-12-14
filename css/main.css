@@ -1,7 +1,162 @@
+/* ---SETUP--- */
+
+/* --vars-- */
+
+:root {
+
+    /* --pallete-- */
+
+    /* -background color- */
+    --clr1: linear-gradient(to top right, rgb(76, 76, 205), rgb(201, 201, 205));
+    /* -icons hover color- */
+    --clr2: rgb(255, 255, 255);
+    /* -menu hover color- */
+    --clr3: rgba(231, 30, 30, 0.704);
+
+    /* --bp-- */
+    --s: ;
+    --m: ;
+    --l: ;
+}
+
+/* ---BASE--- */
+
+/* --typography-- */
+
+@font-face {
+    font-family: RubikVinyl-Regular;
+    src: url(/font/RubikVinyl-Regular.ttf);
+}
+
+@font-face {
+    font-family: fa;
+    src: url("/font/fa/fa-brands-400.ttf");
+
+}
+
+/* --basicx-- */
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+body {
+    text-transform: capitalize;
+    font-family: RubikVinyl-Regular, sans-serif;
+}
+
+header {
+    display: flex;
+}
+
+.menu {
+    padding: 1.5rem;
+}
+
+.gallery-section {
+    grid-area: gallery;
+    background-color: rgb(251, 14, 14);
+    padding: 10px 0;
+}
+
+footer {
+    grid-area: footer;
+    margin: 20px;
+}
+
+.fa::before {
+    font-family: fa;
+    font-size: 0.5em;
+    height: 20px;
+}
+
+.fa.facebook::before {
+    content: "\f39e";
+}
+
+.fa.linkedin::before {
+    content: "\f0e1";
+}
+
+.fa.github::before {
+    content: "\f09b";
+}
+
+.fa:hover {
+    color: var(--clr2);
+}
+
+small {
+    display: block;
+    font-size: 0.5em;
+    margin: 0.5em 0;
+}
+
+/* ---COMPONENTS--- */
+
+.grid-container {
+    background: var(--clr1);
+    display: grid;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    place-content: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas: 'header'
+        'gallery'
+        'footer';
+}
+
+.logo {
+    flex-basis: 20%;
+    margin: auto;
+    color: rgb(219, 219, 219);
+    font-size: 2.3rem;
+    margin-left: 2.5rem;
+}
+
+.logo-footer {
+    font-size: 1rem;
+}
+
+.main-nav {
+    display: flex;
+    flex-basis: 80%;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+li {
+    padding: 0.5rem;
+}
+
+.menu:hover {
+    background-color: var(--clr3);
+    border-radius: 40px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}
+
+/* ---HELPERS--- */
+
+.center {
+    align-items: center;
+    justify-content: center;
 }
 
 .hidden {

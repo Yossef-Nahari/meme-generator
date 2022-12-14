@@ -3,8 +3,9 @@
 function renderGallery() {
     const gallery = getGallery()
     var galleryStrHTML = gallery.map(img =>
-        `<img scr="${img} onClick="onImgSelect(this.src)">`
+        `<img src="${img}" onClick="onImgSelect(this.src)">\n`
     )
+    console.log(galleryStrHTML.join(''));
     document.querySelector('.gallery-section').innerHTML = galleryStrHTML
 }
 
