@@ -31,9 +31,13 @@
 }
 
 @font-face {
-    font-family: fa;
+    font-family: fa-brands;
     src: url("/font/fa/fa-brands-400.ttf");
+}
 
+@font-face {
+    font-family: fa-solid;
+    src: url("/font/fa/fa-solid-900.ttf");
 }
 
 /* --basicx-- */
@@ -74,10 +78,13 @@ footer {
     margin: 20px;
 }
 
+button {
+    cursor: pointer;
+}
+
 .fa::before {
-    font-family: fa;
+    font-family: fa-brands;
     font-size: 0.5em;
-    height: 20px;
 }
 
 .fa.facebook::before {
@@ -96,6 +103,51 @@ footer {
     color: var(--clr2);
 }
 
+.fa-solid::before {
+    font-family: fa-solid;
+    font-size: 0.5em;
+}
+
+.fa-solid.switch::before {
+    content: "\f363";
+}
+
+.fa-solid.new::before {
+    content: "\f4b2";
+}
+
+.fa-solid.delete::before {
+    content: "\f1f8";
+}
+
+.fa-solid.bigger-text::before {
+    content: "\f424";
+}
+
+.fa-solid.smaller-text::before {
+    content: "\f422";
+}
+
+.fa-solid.ltr::before {
+    content: "\f343";
+}
+
+.fa-solid.bars::before {
+    content: "\f0c9";
+}
+
+.fa-solid.rtl::before {
+    content: "\f344";
+}
+
+.fa-solid.bold::before {
+    content: "\f032";
+}
+
+.fa-solid.paint::before {
+    content: "\f53f";
+}
+
 small {
     display: block;
     font-size: 0.5em;
@@ -111,6 +163,32 @@ img {
 
 img:hover {
     box-shadow: 0.5em -0 .8em rgb(63, 189, 76), -0.5em 0 .8em rgb(63, 189, 76);
+}
+
+.meme {
+    display: flex;
+    background-color: var(--clr4);
+    padding: 10px;
+}
+
+.canvas {
+    box-shadow: 0.5em -0 .8em rgb(241, 241, 241), -0.5em 0 .8em rgb(255, 255, 255);
+}
+
+.editor-section {
+    align-self: flex-start;
+    margin-left: 100px;
+}
+
+h2 {
+    padding-bottom: 10px;
+}
+
+.text-line {
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
 }
 
 /* ---COMPONENTS--- */

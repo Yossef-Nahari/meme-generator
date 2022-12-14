@@ -1,14 +1,14 @@
 'use strict'
 
-let gCanvas
+let gElCanvas
 let gCtx
 
 function renderMeme() {
-    gCanvas = document.querySelector('#canvas')
-    gCtx = gCanvas.getContext('2d')
+    gElCanvas = document.querySelector('#canvas')
+    gCtx = gElCanvas.getContext('2d')
     const img = new Image()
     img.src = getMeme()
-    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height) //img,x,y,xEnd,yEnd
+    gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height) //img,x,y,xEnd,yEnd
     // To-do: add a line of text on top
     hideGallery()
     showCanvasEditor()
@@ -29,4 +29,22 @@ function showCanvasEditor() {
     elCanvas.classList.remove('hidden')
     const elEditor = document.querySelector('.editor-section')
     elEditor.classList.remove('hidden')
+}
+
+function onDownloadMeme(elLink) {
+    const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
+    elLink.href = imgContent
+}
+
+function onUploadMeme() {
+    const imgDataUrl = gElCanvas.toDataURL('image/jpeg') // Gets the canvas content as an image format
+
+    // A function to be called if request succeeds
+    function onSuccess(uploadedImgUrl) {
+        // Encode the instance of certain characters in the url
+        const encodedUploadedImgUrl = encodeURIComponent(uploadedImgUrl)
+        window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUploadedImgUrl}&t=${encodedUploadedImgUrl}`)
+    }
+    // Send the image to the server
+    doUploadImg(imgDataUrl, onSuccess)
 }
