@@ -15,7 +15,10 @@ function createImgs() {
 }
 
 function getGallery() {
-    return gImgs
+    if (gFilterBy.length >= 1) {
+        const memes = gImgs.filter(img => img.info.toLowerCase().includes(gFilterBy.toLowerCase()))
+        return memes
+    } else return gImgs
 }
 
 function setImg(img) {

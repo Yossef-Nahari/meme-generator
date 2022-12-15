@@ -221,9 +221,11 @@ button {
     grid-area: italic;
 }
 
-.emojy::before {
-    content: "\f500";
-    grid-area: emojy;
+.btn-save {
+    grid-area: save;
+    font-weight: bold;
+    color: blueviolet;
+    cursor: pointer;
 }
 
 small {
@@ -314,7 +316,7 @@ img:hover {
         'bigger smal ltr'
         'bars rtl bold'
         'paint font italic'
-        'download emojy share';
+        'download save share';
 }
 
 h2 {
@@ -386,9 +388,24 @@ li {
     padding: 0 8px;
 }
 
-.menu:hover {
+.menu:hover:not(.search) {
     background-color: var(--clr3);
     border-radius: 40px;
+}
+
+.search-menu {
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    font-family: Kenia-Regular;
+}
+
+.search-menu:focus {
+    background-color: var(--clr10);
+    color: var(--clr6);
 }
 
 a {

@@ -13,4 +13,18 @@ function onImgSelect(imgSrc) {
     setImg(imgSrc)
     renderMeme()
     MemeModal()
+    hideSearchBar()
+    setGFilterBy()
+    document.querySelector('.search-menu').value = ''
+
 }
+
+function onKeyUpSearch() {
+    setTimeout(() => {
+        const searchStr = document.querySelector('.search-menu').value
+        setMemeFilter(searchStr)
+        renderGallery()
+    }, 500)
+}
+
+

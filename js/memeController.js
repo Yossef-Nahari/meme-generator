@@ -14,7 +14,7 @@ function renderMeme() {
     gCtx.font = `${getItalicText()} ${getBoldText()} ${getTextSize()} ${getFontType()}`
     gCtx.fillStyle = getColor()
     gCtx.textAlign = getTextDirection()
-    gCtx.fillText(getText(), canvas.width / 2, canvas.height / 2)
+    gCtx.fillText(getText(), 50, 20)
 }
 
 function onKeyUpText() {

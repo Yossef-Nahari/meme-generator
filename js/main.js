@@ -20,10 +20,13 @@ function activeCategory(currentCategory) {
 function onGallerySelect(currentCategory) {
     const elGallery = document.querySelector('.gallery-section')
     elGallery.classList.remove('hidden')
+    const elSearch = document.querySelector('.menu.search')
+    elSearch.classList.remove('hidden')
     activeCategory(currentCategory)
     hideMyMemes()
     hideAbout()
     hideCanvasEditor()
+    renderGallery()
     popMsg('Ok, let\'s start playing! 🤡', 'green')
 }
 
@@ -36,6 +39,7 @@ function onAboutSelect(currentCategory) {
     const elAbout = document.querySelector('.about-section')
     elAbout.classList.remove('hidden')
     activeCategory(currentCategory)
+    hideSearchBar()
     hideMyMemes()
     hideGallery()
     hideCanvasEditor()
@@ -61,6 +65,7 @@ function onMyMemesSelect(currentCategory) {
     const elMyMemes = document.querySelector('.my-memes-section')
     elMyMemes.classList.remove('hidden')
     activeCategory(currentCategory)
+    hideSearchBar()
     hideAbout()
     hideGallery()
     hideCanvasEditor()
@@ -85,4 +90,9 @@ function MemeModal() {
 function onCloseModal() {
     const elMemeModal = document.querySelector('.meme-modal')
     elMemeModal.classList.remove('shown')
+}
+
+function hideSearchBar() {
+    const elSearch = document.querySelector('.menu.search')
+    elSearch.classList.add('hidden')
 }

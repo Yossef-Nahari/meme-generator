@@ -18,7 +18,9 @@
             <div class="logo">meme generator</div>
             <nav class="main-nav center">
                 <ul>
-                    <li class="menu"><a class="menu-a category" onclick="onGallerySelect(this)">gallery</a></li>
+                    <li class="menu search"><input data-trans="placeHolder" class="search-menu" type="text"
+                            placeholder="search a meme here 🔍" onkeyup="onKeyUpSearch()" </li>
+                    <li class="menu"><a class="menu-a category active" onclick="onGallerySelect(this)">gallery</a></li>
                     <li class="menu"><a class="menu-a category" onclick="onMyMemesSelect(this)">my memes</a></li>
                     <li class="menu"><a class="menu-a category" onclick="onAboutSelect(this)">about</a></li>
                 </ul>
@@ -67,9 +69,9 @@
                 <!-- <button class="fa-solid paint"></button> -->
                 <input id="paint" title="text color" type="color" class="select-color" onchange="onChangeColor()">
                 <button class="fa-solid italic" title="italic" onclick="onItalicText()"></button>
-                <button class="fa-solid emojy"></button>
+                <a class="btn btn-save" onclick="onSaveMeme()">save</a>
                 <!-- To-do: add select emojy and repair paint icon-->
-                <a href="#" class="btn btn-download" onclick="ondDownloadMeme(this)" download="my-meme.jpg">download</a>
+                <a href="#" class="btn btn-download" onclick="onDownloadMeme(this)" download="my-meme.jpg">download</a>
                 <a class="btn btn-share" onclick="onUploadMeme()">share</a>
             </section>
         </section>
