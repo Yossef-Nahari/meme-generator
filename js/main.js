@@ -17,7 +17,7 @@ function activeCategory(currentCategory) {
     for (let i = 0; i < elCategories.length; i++) {
         elCategories[i].classList.remove('active')
     }
-    currentCategory.classList.add('active')
+    if (currentCategory) currentCategory.classList.add('active')
 }
 
 function onGallerySelect(currentCategory) {

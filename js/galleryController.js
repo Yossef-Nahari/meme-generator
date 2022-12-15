@@ -9,6 +9,7 @@ function renderGallery() {
 }
 
 function onImgSelect(imgSrc) {
+    activeCategory()
     setImg(imgSrc)
     renderMeme()
     MemeModal()

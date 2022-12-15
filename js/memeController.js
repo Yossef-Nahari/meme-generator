@@ -36,6 +36,10 @@ function onChangeColor() {
     renderMeme()
 }
 
+function onDelete() {
+
+}
+
 function showCanvasEditor() {
     const elCanvas = document.querySelector('.canvas')
     elCanvas.classList.remove('hidden')

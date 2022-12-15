@@ -168,7 +168,7 @@ button {
 }
 
 .fa-solid.new::before {
-    content: "\f4b2";
+    content: "\2b";
     grid-area: new;
 }
 
@@ -188,7 +188,7 @@ button {
 }
 
 .fa-solid.ltr::before {
-    content: "\f343";
+    content: "\f061";
     grid-area: ltr;
 }
 
@@ -198,7 +198,7 @@ button {
 }
 
 .fa-solid.rtl::before {
-    content: "\f344";
+    content: "\f060";
     grid-area: rtl;
 }
 
