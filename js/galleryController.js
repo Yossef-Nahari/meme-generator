@@ -11,15 +11,5 @@ function renderGallery() {
 function onImgSelect(imgSrc) {
     setImg(imgSrc)
     renderMeme()
-}
-
-function hideGallery() {
-    const elGallery = document.querySelector('.gallery-section')
-    elGallery.classList.add('hidden')
-}
-
-function onGallerySelect() {
-    const elGallery = document.querySelector('.gallery-section')
-    elGallery.classList.remove('hidden')
-    hideCanvasEditor()
+    MemeModal()
 }

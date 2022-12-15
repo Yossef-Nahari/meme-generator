@@ -18,14 +18,29 @@
             <div class="logo">meme generator</div>
             <nav class="main-nav center">
                 <ul>
-                    <li class="menu"><a class="menu-a" onclick="onGallerySelect()">gallery</a></li>
-                    <li class="menu"><a class="menu-a" href="#">my memes</a></li>
-                    <li class="menu"><a class="menu-a" href="#">about</a></li>
+                    <li class="menu"><a class="menu-a category" onclick="onGallerySelect(this)">gallery</a></li>
+                    <li class="menu"><a class="menu-a category" onclick="onMyMemesSelect(this)">my memes</a></li>
+                    <li class="menu"><a class="menu-a category" onclick="onAboutSelect(this)">about</a></li>
                 </ul>
             </nav>
         </header>
 
-        <section class="gallery-section"></section>
+        <section class=" gallery-section">
+        </section>
+
+        <section class=" my-memes-section hidden">
+        </section>
+
+        <section class=" about-section hidden">
+            <h2>About section</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo possimus itaque ducimus delectus aspernatur
+                molestiae voluptas, cumque explicabo dolor velit vero placeat pariatur corrupti aperiam doloremque
+                sapiente nobis totam aliquid quibusdam. Nihil blanditiis reprehenderit distinctio ut delectus fuga
+                perspiciatis laboriosam beatae corrupti doloribus architecto, maiores optio accusamus voluptas? Aut
+                repellendus corporis ullam illum perspiciatis quis veritatis, voluptatum ipsa vel, eveniet officia? Ex
+                suscipit laborum dolorem, sit porro facere illum quas cupiditate saepe a quod deserunt? Dolorem cum
+                molestias deserunt nisi?</p>
+        </section>
 
         <section class="meme center">
             <canvas id="canvas" class="canvas hidden" height="400" width="400"
@@ -64,10 +79,21 @@
             <ul class="social-links center">
                 <li class="icons"><a href="https://m.facebook.com/yossi.nahari/" class="fa facebook"></a></li>
                 <li class="icons"><a href="https://www.linkedin.com/in/yossef-nahari-23b419257/"
-                        class="fa linkedin"></a></li>
+                        class="fa linkedin"></a>
+                </li>
                 <li class="icons"><a href="https://github.com/Yossef-Nahari" class="fa github"></a></li>
             </ul>
         </footer>
+
+        <div class="user-msg"></div>
+
+        <div class="meme-modal">
+            <button class="exit-btn" onclick="onCloseModal()">X</button>
+            <h1 class="meme-h1">have fun!</h1>
+            <h2 class="meme-h2">don't forget to share this app with you friends 😉</h2>
+            <h3 class="meme-h3"> You choose:</h3>
+            <img class="curr-meme-img" src="#" alt="current meme picture">
+        </div>
 
     </section>
 
