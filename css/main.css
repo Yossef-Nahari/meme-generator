@@ -138,7 +138,7 @@ button {
 
 .text-line {
     height: 30px;
-    width: 490px;
+    width: 530px;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -151,6 +151,9 @@ button {
     background: none;
     border: none;
     color: var(--clr9);
+    background-color: rgba(0, 0, 0, 0.53);
+    height: 40px;
+    border-radius: 5px;
 }
 
 .fa-solid:hover {
@@ -210,6 +213,17 @@ button {
 .fa-solid.paint::before {
     content: "\f53f";
     grid-area: paint;
+
+}
+
+.italic::before {
+    content: "\f033";
+    grid-area: italic;
+}
+
+.emojy::before {
+    content: "\f500";
+    grid-area: emojy;
 }
 
 small {
@@ -220,19 +234,30 @@ small {
 }
 
 .select-font {
-    margin-top: 18px;
     height: 40px;
-    width: 100px;
+    width: 170px;
     font-size: 20px;
     font-family: Kenia-Regular;
     text-align: center;
-    background-color: var(--clr9);
     border-radius: 5px;
     cursor: pointer;
+    grid-area: font;
+    color: var(--clr9);
+    background-color: rgba(0, 0, 0, 0.53);
+    border: none;
 }
 
 .select-font:hover {
-    background-color: var(--clr10);
+    color: var(--clr10);
+}
+
+.select-color {
+    height: 40px;
+    width: 170px;
+    border-radius: 5px;
+    color: var(--clr9);
+    background-color: rgba(0, 0, 0, 0.53);
+    cursor: pointer;
 }
 
 img {
@@ -275,8 +300,8 @@ img:hover {
 .editor-section {
     align-self: flex-start;
     margin-left: 100px;
-
     display: grid;
+    grid-gap: 10px;
     margin: auto 100px;
     /* place-content: center; */
     /* text-align: center; */
@@ -288,8 +313,8 @@ img:hover {
         'switch new delete'
         'bigger smal ltr'
         'bars rtl bold'
-        'paint paint paint'
-        'download share share';
+        'paint font italic'
+        'download emojy share';
 }
 
 h2 {

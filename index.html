@@ -50,22 +50,24 @@
                 <h2>meme editor 🤡</h2>
                 <input data-trans="text-line" class="text-line" type="text" onkeyup="onKeyUpText()"
                     placeHolder="insert your meme here 🤣">
-                <button class="fa-solid switch"></button>
-                <button class="fa-solid new"></button>
-                <button class="fa-solid delete" onclick="onDelete()"></button>
-                <button class="fa-solid bigger-text"></button>
-                <button class="fa-solid smaller-text"></button>
-                <button class="fa-solid ltr"></button>
-                <button class="fa-solid bars"></button>
-                <button class="fa-solid rtl"></button>
-                <select class="select-font" onchange="onSetFont()">
+                <button class="fa-solid switch" title="switch line"></button>
+                <button class="fa-solid new" title="new line"></button>
+                <button class="fa-solid delete" title="delete line" onclick="onDelete()"></button>
+                <button class="fa-solid bigger-text" title="bigger font" onclick="onTextSize(2)"></button>
+                <button class="fa-solid smaller-text" title="smaller font" onclick="onTextSize(-2)"></button>
+                <button class="fa-solid ltr" title="left align" onclick="onTextDirection('left')"></button>
+                <button class="fa-solid bars" title="center" onclick="onTextDirection('center')"></button>
+                <button class="fa-solid rtl" title="right align" onclick="onTextDirection('right')"></button>
+                <select class="select-font" title="select font" onchange="onSetFont()">
                     <option value="Cambaria">Cambaria</option>
                     <option value="Georgia">Georgia</option>
                     <option value="Times">Times</option>
                 </select>
-                <button class="fa-solid bold"></button>
+                <button class="fa-solid bold" title="bold" onclick="onBoldText()"></button>
                 <!-- <button class="fa-solid paint"></button> -->
-                <input id="paint" type="color" class="select-color" onchange="onChangeColor()">
+                <input id="paint" title="text color" type="color" class="select-color" onchange="onChangeColor()">
+                <button class="fa-solid italic" title="italic" onclick="onItalicText()"></button>
+                <button class="fa-solid emojy"></button>
                 <!-- To-do: add select emojy and repair paint icon-->
                 <a href="#" class="btn btn-download" onclick="ondDownloadMeme(this)" download="my-meme.jpg">download</a>
                 <a class="btn btn-share" onclick="onUploadMeme()">share</a>

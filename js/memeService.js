@@ -3,7 +3,11 @@
 let gMeme
 let gTextLine
 let gTextFont
-let gTextColor
+let gTextColor = 'black'
+let gTextSize = 20
+let gTextBold = ''
+let gTextDirection = 'left'
+let gItalicText = ''
 
 function setMeme(imgSrc) {
     gMeme = imgSrc
@@ -36,4 +40,38 @@ function getColor() {
 
 function getFontType() {
     return gTextFont
+}
+
+function setTextSize(action) {
+    gTextSize += action
+}
+
+function getTextSize() {
+    return gTextSize + 'px'
+}
+
+function setBoldText() {
+    if (gTextBold === '') gTextBold = 'bold'
+    else gTextBold = ''
+}
+
+function getBoldText() {
+    return gTextBold
+}
+
+function setTextDirection(direction) {
+    gTextDirection = direction
+}
+
+function getTextDirection(direction) {
+    return gTextDirection
+}
+
+function setItalicText() {
+    if (gItalicText === '') gItalicText = 'italic'
+    else gItalicText = ''
+}
+
+function getItalicText() {
+    return gItalicText
 }

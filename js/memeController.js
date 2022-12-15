@@ -11,9 +11,10 @@ function renderMeme() {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height) //img,x,y,xEnd,yEnd
     hideGallery()
     showCanvasEditor()
-    gCtx.font = `20px ${getFontType()}`;
-    gCtx.fillStyle = `${getColor()} || 'black`;
-    gCtx.fillText(getText(), 10, 50);
+    gCtx.font = `${getItalicText()} ${getBoldText()} ${getTextSize()} ${getFontType()}`
+    gCtx.fillStyle = getColor()
+    gCtx.textAlign = getTextDirection()
+    gCtx.fillText(getText(), canvas.width / 2, canvas.height / 2)
 }
 
 function onKeyUpText() {
@@ -37,7 +38,29 @@ function onChangeColor() {
 }
 
 function onDelete() {
+    document.querySelector('.text-line').value = ''
+    setLineText('')
+    renderMeme()
+}
 
+function onTextSize(action) {
+    setTextSize(action)
+    renderMeme()
+}
+
+function onBoldText() {
+    setBoldText()
+    renderMeme()
+}
+
+function onTextDirection(direction) {
+    setTextDirection(direction)
+    renderMeme()
+}
+
+function onItalicText() {
+    setItalicText()
+    renderMeme()
 }
 
 function showCanvasEditor() {

@@ -7,9 +7,6 @@ function init() {
     createImgs()
     renderGallery()
     popMsg('Hola and welcome to my app!', 'blue')
-    setTimeout(() => {
-        popMsg('Now choose your fav meme 😉', 'blue')
-    }, 5000)
 }
 
 function activeCategory(currentCategory) {
