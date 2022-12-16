@@ -2,7 +2,8 @@
 
 let gMeme
 let gFilterBy = ''
-let gTextLine
+let gTextLine = []
+let gTextShow
 let gTextFont
 let gTextColor = 'black'
 let gTextSize = 20
@@ -18,13 +19,22 @@ function getMeme() {
     return gMeme
 }
 
-function setLineText(text) {
-    gTextLine = text
+function setLineText(text, isFinal) {
+    if (isFinal) {
+        if (!gTextLine[0]) gTextLine[0] = { text, x: 50, y: 70 }
+        else if (!gTextLine[1]) gTextLine[1] = { text: text, x: 50, y: 350 }
+        else if (!gTextLine[2]) gTextLine[2] = { text: text, x: 50, y: 210 }
+        else return
+        gTextShow = gTextLine
+    }
+    // } else if (!gTextLine[0]) gTextShow = { text, x: 50, y: 70 }
+    // else if (gTextLine[0] && !gTextLine[1]) gTextShow = { text, x: 50, y: 350 }
+    // else gTextShow = { text, x: 50, y: 210 }
 }
 
-function getText() {
-    if (!gTextLine) return ''
-    return gTextLine
+function getTextShow() {
+    if (!gTextShow) return ''
+    else return gTextShow
 }
 
 function setFont(fontType) {

@@ -14,14 +14,35 @@ function renderMeme() {
     gCtx.font = `${getItalicText()} ${getBoldText()} ${getTextSize()} ${getFontType()}`
     gCtx.fillStyle = getColor()
     gCtx.textAlign = getTextDirection()
-    gCtx.fillText(getText(), 50, 20)
+
+    const lines = getTextShow()
+    if (!lines) return
+    if (lines.length === 1) {
+        const { text, x, y } = lines[0]
+        gCtx.fillText(text, x, y)
+    } else {
+        lines.forEach(line => {
+            const { text, x, y } = line
+            gCtx.fillText(text, x, y)
+        })
+    }
+    // const { text, x, y } = getTextShow()
+
+    // gCtx.fillText(text, x, y)
 }
 
-function onKeyUpText() {
+function onKeyUpText(ev) {
     setTimeout(() => {
-        const textStr = document.querySelector('.text-line').value
-        setLineText(textStr)
-        renderMeme()
+        if (ev.key == 'Enter') {
+            const textStr = document.querySelector('.text-line').value
+            setLineText(textStr, true)
+            document.querySelector('.text-line').value = ''
+            renderMeme()
+            // } else {
+            //     const textStr = document.querySelector('.text-line').value
+            //     setLineText(textStr, false)
+            //     renderMeme()
+        }
     }, 500);
 }
 
