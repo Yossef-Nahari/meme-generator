@@ -40,22 +40,22 @@
 
 @font-face {
     font-family: RubikVinyl-Regular;
-    src: url(../font/RubikVinyl-Regular.ttf);
+    src: url(/font/RubikVinyl-Regular.ttf);
 }
 
 @font-face {
     font-family: Kenia-Regular;
-    src: url(./font/Kenia-Regular.ttf);
+    src: url(/font/Kenia-Regular.ttf);
 }
 
 @font-face {
     font-family: fa-brands;
-    src: url("./font/fa/fa-brands-400.ttf");
+    src: url("/font/fa/fa-brands-400.ttf");
 }
 
 @font-face {
     font-family: fa-solid;
-    src: url("./font/fa/fa-solid-900.ttf");
+    src: url("/font/fa/fa-solid-900.ttf");
 }
 
 /* --basicx-- */
