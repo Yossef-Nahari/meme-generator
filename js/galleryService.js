@@ -8,7 +8,7 @@ const gImgInfo = ['Trump', 'dogs', 'baby and dog', 'cat', 'boy', 'man in a suite
 function createImgs() {
     const imgs = []
     for (let i = 0; i < 18; i++) {
-        let obj = { src: `img/${i + 1}.jpg`, info: gImgInfo[i] }
+        let obj = { src: `./img/${i + 1}.jpg`, info: gImgInfo[i] }
         imgs.push(obj)
     }
     gImgs = imgs
