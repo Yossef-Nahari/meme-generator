@@ -3,6 +3,7 @@
 let gMeme
 let gFilterBy = ''
 let gTextLine = []
+let gTextShowTemp = {}
 let gTextShow
 let gTextFont
 let gTextColor = 'black'
@@ -10,6 +11,7 @@ let gTextSize = 20
 let gTextBold = ''
 let gTextDirection = 'left'
 let gItalicText = ''
+let gMyMemes = []
 
 function setMeme(imgSrc) {
     gMeme = imgSrc
@@ -26,15 +28,20 @@ function setLineText(text, isFinal) {
         else if (!gTextLine[2]) gTextLine[2] = { text: text, x: 50, y: 210 }
         else return
         gTextShow = gTextLine
-    }
-    // } else if (!gTextLine[0]) gTextShow = { text, x: 50, y: 70 }
-    // else if (gTextLine[0] && !gTextLine[1]) gTextShow = { text, x: 50, y: 350 }
-    // else gTextShow = { text, x: 50, y: 210 }
+    } else if (!isFinal && !gTextLine[0]) gTextShowTemp = { text, x: 50, y: 70 }
+    else if (!isFinal && !gTextLine[1]) gTextShowTemp = { text, x: 50, y: 350 }
+    else if (!isFinal && !gTextLine[2]) gTextShowTemp = { text, x: 50, y: 210 }
+    else return
 }
 
 function getTextShow() {
     if (!gTextShow) return ''
     else return gTextShow
+}
+
+function getTextShowTemp() {
+    if (!gTextShowTemp) return null
+    else return gTextShowTemp
 }
 
 function setFont(fontType) {
@@ -87,6 +94,19 @@ function getItalicText() {
     return gItalicText
 }
 
+function setImgIntoMyMemes(imgContent) {
+    const img = new Image
+    img.src = imgContent
+    img.onload = function () {
+        gMyMemes.push(img)
+        saveToStorage('MY-MEMES', gMyMemes)
+    }
+}
+
+function getMyMemes() {
+    return gMyMemes
+}
+
 function doUploadImg(imgDataUrl, onSuccess) {
     // Pack the image for delivery
     const formData = new FormData()
@@ -107,4 +127,11 @@ function setMemeFilter(searchStr) {
 
 function setGFilterBy() {
     gFilterBy = ''
+}
+
+function resetCanvasLines() {
+    gTextShow = null
+    gTextShowTemp = null
+    gTextLine = []
+    resetLineTextValue()
 }

@@ -27,6 +27,7 @@ function onGallerySelect(currentCategory) {
     hideAbout()
     hideCanvasEditor()
     renderGallery()
+    resetCanvasLines()
     popMsg('Ok, let\'s start playing! 🤡', 'green')
 }
 
@@ -43,6 +44,7 @@ function onAboutSelect(currentCategory) {
     hideMyMemes()
     hideGallery()
     hideCanvasEditor()
+    resetCanvasLines()
     popMsg('A little bit about the app! 🧑🏻‍💻', 'green')
 }
 
@@ -69,6 +71,8 @@ function onMyMemesSelect(currentCategory) {
     hideAbout()
     hideGallery()
     hideCanvasEditor()
+    renderMyMemes()
+    resetCanvasLines()
     popMsg('Ok, what we have here?! 😂', 'green')
 }
 

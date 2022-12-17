@@ -15,6 +15,11 @@ function renderMeme() {
     gCtx.fillStyle = getColor()
     gCtx.textAlign = getTextDirection()
 
+    if (getTextShowTemp()) {
+        const { text, x, y } = getTextShowTemp()
+        gCtx.fillText(text, x, y)
+    }
+
     const lines = getTextShow()
     if (!lines) return
     if (lines.length === 1) {
@@ -26,24 +31,27 @@ function renderMeme() {
             gCtx.fillText(text, x, y)
         })
     }
-    // const { text, x, y } = getTextShow()
-
-    // gCtx.fillText(text, x, y)
 }
 
-function onKeyUpText(ev) {
+function onKeyUpText(ev, newLine) {
     setTimeout(() => {
-        if (ev.key == 'Enter') {
-            const textStr = document.querySelector('.text-line').value
+        const textStr = document.querySelector('.text-line').value
+        if (ev.key == 'Enter' || newLine) {
             setLineText(textStr, true)
             document.querySelector('.text-line').value = ''
-            renderMeme()
-            // } else {
-            //     const textStr = document.querySelector('.text-line').value
-            //     setLineText(textStr, false)
-            //     renderMeme()
+        } else {
+            setLineText(textStr, false)
         }
+        renderMeme()
     }, 500);
+}
+
+function onSwithLine() {
+    // To-do: Complete this func
+    for (let i = 0; i < gTextLine.length; i++) {
+        document.querySelector('.text-line').value = gTextLine[i].text
+        gCtx.fillText(document.querySelector('.text-line').value, gTextLine[i].x, gTextLine[i].y)
+    }
 }
 
 function onSetFont() {
@@ -98,6 +106,12 @@ function hideCanvasEditor() {
     elEditor.classList.add('hidden')
 }
 
+function onSaveMeme() {
+    // To-do: Complete this func
+    const imgContent = gElCanvas.toDataURL('image/jpeg')
+    setImgIntoMyMemes(imgContent)
+}
+
 function onDownloadMeme(elLink) {
     const imgContent = gElCanvas.toDataURL('image/jpeg') // image/jpeg the default format
     elLink.href = imgContent
@@ -114,4 +128,16 @@ function onUploadMeme() {
     }
     // Send the image to the server
     doUploadImg(imgDataUrl, onSuccess)
+}
+
+function renderMyMemes() {
+    const myMemes = getMyMemes()
+    var myMemesStrHTML = myMemes.map(meme =>
+        `<img src="${meme.src}" data-info="${meme.info}" title="${meme.info}" onClick="onImgSelect(this.src)">`
+    )
+    document.querySelector('.my-memes-section').innerHTML = myMemesStrHTML.join('')
+}
+
+function resetLineTextValue() {
+    document.querySelector('.text-line').value = ''
 }

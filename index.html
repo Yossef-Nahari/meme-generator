@@ -50,10 +50,10 @@
 
             <section class="editor-section hidden">
                 <h2>meme editor 🤡</h2>
-                <input data-trans="text-line" class="text-line" type="text" onkeyup="onKeyUpText(event)"
+                <input data-trans="text-line" class="text-line" type="text" onkeyup="onKeyUpText(event, false)"
                     placeHolder="insert your meme here 🤣">
-                <button class="fa-solid switch" title="switch line"></button>
-                <button class="fa-solid new" title="new line"></button>
+                <button class="fa-solid switch" title="switch line" onclick="onSwithLine()"></button>
+                <button class="fa-solid new" title="new line" onclick="onKeyUpText(event, true)"></button>
                 <button class="fa-solid delete" title="delete line" onclick="onDelete()"></button>
                 <button class="fa-solid bigger-text" title="bigger font" onclick="onTextSize(2)"></button>
                 <button class="fa-solid smaller-text" title="smaller font" onclick="onTextSize(-2)"></button>
@@ -103,6 +103,7 @@
 
     <script src="/js/galleryService.js"></script>
     <script src="/js/galleryController.js"></script>
+    <script src="/js/storage.js"></script>
     <script src="/js/memeService.js"></script>
     <script src="/js/memeController.js"></script>
     <script src="/js/main.js"></script>
