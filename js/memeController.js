@@ -2,6 +2,7 @@
 
 let gElCanvas
 let gCtx
+let lineIndex = -1
 
 function renderMeme() {
     gElCanvas = document.querySelector('#canvas')
@@ -36,8 +37,11 @@ function renderMeme() {
 function onKeyUpText(ev, newLine) {
     setTimeout(() => {
         const textStr = document.querySelector('.text-line').value
-        if (ev.key == 'Enter' || newLine) {
-            setLineText(textStr, true)
+        if (ev.key == 'Enter') {
+            if (gTextLine[lineIndex]) {
+                gTextLine[lineIndex].text = document.querySelector('.text-line').value
+            } else
+                setLineText(textStr, true)
             document.querySelector('.text-line').value = ''
         } else {
             setLineText(textStr, false)
@@ -48,10 +52,11 @@ function onKeyUpText(ev, newLine) {
 
 function onSwithLine() {
     // To-do: Complete this func
-    for (let i = 0; i < gTextLine.length; i++) {
-        document.querySelector('.text-line').value = gTextLine[i].text
-        gCtx.fillText(document.querySelector('.text-line').value, gTextLine[i].x, gTextLine[i].y)
-    }
+    lineIndex++
+    if (lineIndex > gTextLine.length) lineIndex = 0
+    if (gTextLine[lineIndex]) document.querySelector('.text-line').value = gTextLine[lineIndex].text
+    // gTextLine[lineIndex].text = document.querySelector('.text-line').value
+    renderMeme()
 }
 
 function onSetFont() {
